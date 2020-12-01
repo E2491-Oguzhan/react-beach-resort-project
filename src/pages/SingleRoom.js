@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import defaultBcg from "../images/room-1.jpeg";
-import { Banner, StyledHero } from "../components";
+import { Banner, StyledHero, Hero } from "../components";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
 
@@ -19,6 +19,9 @@ class SingleRoom extends Component {
   render() {
     const { getRoom } = this.context;
     const room = getRoom(this.state.slug);
+    // console.log(room);
+
+    // whether is room undefined or not
     if (!room) {
       return (
         <div className="error">
@@ -42,7 +45,7 @@ class SingleRoom extends Component {
       images,
     } = room;
 
-    const [mainImg, ...defaultImg] = images; // rest operator
+    const [mainImg, ...defaultImg] = images; // array destruction via rest operator
 
     return (
       <>

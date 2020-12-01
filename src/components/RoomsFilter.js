@@ -9,6 +9,7 @@ const getUnique = (item, value) => {
 
 export const RoomsFilter = ({ rooms }) => {
   const context = useContext(RoomContext);
+  // console.log(context);
 
   const {
     handleChange,
@@ -99,7 +100,7 @@ export const RoomsFilter = ({ rooms }) => {
         {/** end of room price */}
         {/** size */}
         <div className="form-group">
-          <label htmlFor="size"></label>
+          <label htmlFor="size">room size SQFT</label>
           <div className="size-inputs">
             <input
               type="number"

@@ -3,6 +3,7 @@ import { RoomsList, RoomsFilter, Loading } from "../components";
 import { withRoomConsumer } from "../context";
 
 function RoomsContainer({ context }) {
+  console.log(context);
   const { loading, sortedRooms, rooms } = context;
   if (loading) {
     return <Loading />;
@@ -30,11 +31,10 @@ export default withRoomConsumer(RoomsContainer);
 //           return <Loading />;
 //         }
 //         return (
-//           <div>
-//             <p>Hello froms room container</p>
+//           <>
 //             <RoomsFilter rooms={rooms} />
 //             <RoomsList rooms={sortedRooms} />
-//           </div>
+//           </>
 //         );
 //       }}
 //     </RoomConsumer>
